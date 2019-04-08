@@ -1,3 +1,6 @@
+<?php include('db_connect.php');
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,22 +38,34 @@
 
 	<!-- Header section start -->
 	<header class="header-section sp-pad">
-		<h3 class="site-logo">HALO</h3>
-		<form class="search-top">
+		<h3 class="site-logo">KB Tickets</h3>
+		<!-- <form class="search-top">
 			<button class="se-btn"><i class="fa fa-search"></i></button>
 			<input type="text" placeholder="Search.....">
-		</form>
+		</form> -->
 		<div class="nav-switch">
 			<i class="fa fa-bars"></i>
 		</div>
 		<nav class="main-menu">
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">about us</a></li>
-				<li><a href="#">Services</a></li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="about.php">about us</a></li>
+				<!-- <li><a href="#">Services</a></li>
 				<li><a href="portfolio.html">Portfolio</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="blog.html">Blog</a></li> -->
+				<?php 
+				if (!isset($_SESSION["email"])) {?><li><a href="cust_sign.php">Sign Up</a></li><?php }
+                    else{ 
+$email= $_SESSION["email"]; $results = mysqli_query($conn, "SELECT * FROM customer where email='$email'"); 
+                          $rowf = mysqli_fetch_array($results);?><li><a href="cust_dash.php"><b>hi,&nbsp;<?php echo $rowf['name'];?></b></a></li><?php } ?>
+				
+				<!-- <li><a href="cust_login.php">Sign In</a></li> -->
+				<?php 
+				if (!isset($_SESSION["email"])) {?><li><a href="cust_login.php">Sign In</a></li><?php }
+                    else{ ?><li><a href="logout_cust.php"><b>logout</b></a></li><?php } ?>
+                <?php 
+				if (isset($_SESSION["email"])) {?><li><a href="cust_dash.php"><b>MY dashboard</b></a></li><?php }?>
+				<li><a href="contact.php">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -58,79 +73,37 @@
 
 
 	<!-- Page top section start -->
-	<div class="page-top-area set-bg" data-setbg="img/headers-bg/3.jpg">
+	<div class="page-top-area set-bg" data-setbg="img/headers-bg/1.jpg">
 		<div class="breadcrumb-area">
-			<a href="#">Home</a> / <span>Portfolio</span>
+			<a href="index.php">Home</a> / <span>About us</span>
 		</div>
 	</div>
 	<!-- Page top section end -->
 
 
-	<!-- Blogs section start -->
-	<section class="single-work-section sp-pad spad">
+	<!-- Intro section start -->
+	<section class="intro-section sp-pad spad">
 		<div class="container-fluid p-0">
-			<div class="work-slider owl-carousel">
-				<div class="ws-item set-bg" data-setbg="img/work-slider/1.jpg"></div>
-				<div class="ws-item set-bg" data-setbg="img/work-slider/2.jpg"></div>
-			</div>
 			<div class="row">
-				<div class="col-xl-5">
-					<ul class="work-info-list">
-						<li>
-							<span>Client:</span>
-							<h4>Design Studio</h4>
-						</li>
-						<li>
-							<span>category:</span>
-							<h4>Studio photography</h4>
-						</li>
-						<li>
-							<span>Project timeline:</span>
-							<h4>3 months</h4>
-						</li>
-						<li>
-							<span>tags:</span>
-							<h4>product, photography</h4>
-						</li>
-					</ul>
-				</div>
-				<div class="col-xl-6 offset-xl-1">
-					<span class="sp-sub-title">Amazing studio</span>
+				<div class="col-xl-4 intro-text">
+					<span class="sp-sub-title">KB TICKETS</span>
 					<h3 class="sp-title">We are so Creative</h3>
-					<p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Fusce venenatis diam urna, eu pharetra arcu varius ac. Etiam cursus turpis lectus, id iaculis risus tempor id. Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Fusce venenatis diam urna, eu pharetra arcu varius ac. Etiam cursus turpis lectus, id iaculis risus tempor id.</p>
+					<p>Our previous work helped people by providing travel solutions. Our aim is to make travel for commuters as simplified as possible.</p>
+					
+				</div>
+				<div class="col-xl-7 offset-xl-1">
+					<figure class="intro-img mt-5 mt-xl-0">
+						<img src="img/intro.jpg" alt="">
+					</figure>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!-- Blogs section end -->
+	<!-- Intro section end -->
 
 
-	<!-- Work nav section start -->
-	<section class="worknav-section extra-style sp-pad">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-6">
-					<div class="worknav wn-prev">
-						<a href="#" class="wn-thumb set-bg" data-setbg="img/recent-thumb/1.jpg"></a>
-						<div class="wn-info">
-							<span>Previous work</span>
-							<h3>Wedding Photography</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-6">
-					<div class="worknav wn-next">
-						<a href="#" class="wn-thumb set-bg" data-setbg="img/recent-thumb/2.jpg"></a>
-						<div class="wn-info">
-							<span>Letest work</span>
-							<h3>Living by the sea</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Work nav section end -->
+
+
 
 
 	<!-- Footer section start -->

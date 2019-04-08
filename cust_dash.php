@@ -7,115 +7,217 @@ if (!isset($_SESSION["email"])) {
 }
 else $email= $_SESSION["email"];
 ?>
-
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <title></title>
+	<title>KB Tickets</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="HALO photography portfolio template">
+	<meta name="keywords" content="photography, portfolio, onepage, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->   
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/flaticon.css"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
 </head>
 <body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
 
-          
-                 
-  
-         <table border="10" cellspacing="10" cellpadding="10" width="100%"
-                    bgcolor="#4e8975">
-                    <tr>
-                        <td bgcolor="#54c571" width="100%">
-                          <font size="4" face="Arial">
-                            <B>Main Menu</B>
-                          </font>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#a74ac7" width="100%" align="center">
-                          <font size="2" face="Arial">
-                            <B><a href="stu_dash.php" style="text-decoration: none;">DASHBOARD</a<asp:Label ID="lblname" runat="server" Text=""></asp:Label></B>
-                          </font>
-                        </td>
-                         <tr>
-                        <td bgcolor="#a74ac7" width="100%">
-                          <font size="2" face="Arial"><B><A href="http://www.srmuniv.ac.in/" target="_blank">Institute Details </A> </B></font>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#a74ac7" width="100%">
-                          <font size="2" face="Arial">
-                            <B> <a href="stuexamlist.php">Exam List</a>
-                               
-                            </B>
-                          </font>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#a74ac7" width="100%">
-                          <font size="2" face="Arial">
-                            <B><a href="logout_cust.php">Logout</a>
-                         
-                            </B>
-                          </font>
-                        </td>
-                    </tr>
+	<!-- Header section start -->
+	<header class="header-section sp-pad">
+		<h3 class="site-logo">KB Tickets</h3>
+		<!-- <form class="search-top">
+			<button class="se-btn"><i class="fa fa-search"></i></button>
+			<input type="text" placeholder="Search.....">
+		</form> -->
+		<div class="nav-switch">
+			<i class="fa fa-bars"></i>
+		</div>
+		<nav class="main-menu">
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="about.php">about us</a></li>
+				<!-- <li><a href="#">Services</a></li>
+				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="blog.html">Blog</a></li> -->
+				<?php 
+				if (!isset($_SESSION["email"])) {?><li><a href="cust_sign.php">Sign Up</a></li><?php }
+                    else{ 
+$email= $_SESSION["email"]; $results = mysqli_query($conn, "SELECT * FROM customer where email='$email'"); 
+                          $rowf = mysqli_fetch_array($results);?><li><a href="cust_dash.php"><b>hi,&nbsp;<?php echo $rowf['name'];?></b></a></li><?php } ?>
+				
+				<!-- <li><a href="cust_login.php">Sign In</a></li> -->
+				<?php 
+				if (!isset($_SESSION["email"])) {?><li><a href="cust_login.php">Sign In</a></li><?php }
+                    else{ ?><li><a href="logout_cust.php"><b>logout</b></a></li><?php } ?>
+                <?php 
+				if (isset($_SESSION["email"])) {?><li><a href="cust_dash.php"><b>MY dashboard</b></a></li><?php }?>
+				<li><a href="contact.php">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- Header section end -->
 
-                    <?php $results = mysqli_query($conn, "SELECT * FROM customer where email='$email'"); 
-                          $rowf = mysqli_fetch_array($results);
-                    ?>
-
-      <P>
-        <TABLE border=10 cellSpacing=0 cellPadding=0 width="100%" bgColor=#f87431>
-          <TR>
-            <TD width="100%" align=middle>
-              <B>
-                <FONT color=#ffffff size=2 face=Arial>Developed By:</FONT>
-              </B>
-            </TD>
-          </TR>
-        </TABLE>
-        <TABLE border=0 cellSpacing=10 cellPadding=10 width="100%" bgColor=#bce954>
-          <TR>
-            <TD bgColor=#e0ffff width="100%">
-              <FONT size=2 face=Arial><b>Subhadeep Kundu</b></FONT>
-            </TD>
-          </TR>
-        </TABLE>
-      </P>
-      </TD>
-   <p></p>
-   <p></p>
-      <TD bgcolor=#ffffff vAlign=top width="61%" align=left>
-        <P>
-          <BR>
-          <FONT color=#ff0000 size=5 face="Lucida Calligraphy">
-            <B>
-              
-            </B>
-          </FONT>
-          <p align="right" style="font-size: 20px"><b>Hi,&nbsp; <?php echo $rowf['name'];?></b><br>
-          <br><center><img src="stulogo.jpg" width="450" height="270"></center>
-            <TABLE >
-              <tr>
-                <!--<td bgColor=#e56e94 vAlign=top align=left>
-                  <FONT size=3 face=Arial>
-                    <b>                    </b><br>
-                  </FONT>
-                </td> -->
-              </tr>
-              
-            
-
-</table> 
-
-      </TD>
-    </font>
-</TABLE>
+	<!-- Page top section start -->
+	<div class="page-top-area set-bg" data-setbg="img/headers-bg/3.jpg">
+		<div class="breadcrumb-area">
+			<a href="index.php">Home</a> / <span>my dashboard</span>
+		</div>
+	</div>
+	<!-- Page top section end -->
 
 
+	<!-- Portfolio section start -->
+	<section class="portfolio-section">
+		<div class="sp-pad spad">
+			<!-- portfolio filter menu -->
+			<ul class="portfolio-filter controls">
+				<li class="control" data-filter="*">All</li>
+				<li class="control" data-filter=".photo">Photography</li>
+				<li class="control" data-filter=".wedding">Weddings</li>
+				<li class="control" data-filter=".land">Landscapes</li>
+				<li class="control" data-filter=".port">Portraits</li>
+			</ul>
+		</div>
+		<div class="portfolio-warp">
+			<!-- single item -->
+			<div class="mix single-portfolio set-bg photo" data-setbg="img/portfolio/1.jpg">
+				<a href="#" class="portfolio-info">
+					<div class="pfbg set-bg" data-setbg="img/portfolio/1.jpg"></div>
+					<h5>Summer in the desert</h5>
+					<p>Landscape Photography</p>
+				</a>
+			</div>
+			<!-- single item -->
+			<div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/2.jpg">
+				<a href="#" class="portfolio-info">
+					<div class="pfbg set-bg" data-setbg="img/portfolio/2.jpg"></div>
+					<h5>Summer in the desert</h5>
+					<p>Landscape Photography</p>
+				</a>
+			</div>
+			<!-- single item -->
+			<div class="mix single-portfolio set-bg land" data-setbg="img/portfolio/3.jpg">
+				<a href="#" class="portfolio-info">
+					<div class="pfbg set-bg" data-setbg="img/portfolio/3.jpg"></div>
+					<h5>Summer in the desert</h5>
+					<p>Landscape Photography</p>
+				</a>
+			</div>
+			<!-- single item -->
+			<div class="mix single-portfolio sm-wide set-bg port" data-setbg="img/portfolio/4.jpg">
+				<a href="#" class="portfolio-info">
+					<div class="pfbg set-bg" data-setbg="img/portfolio/4.jpg"></div>
+					<h5>Summer in the desert</h5>
+					<p>Landscape Photography</p>
+				</a>
+			</div>
+			<!-- single item -->
+			<div class="mix single-portfolio sm-wide set-bg photo" data-setbg="img/portfolio/5.jpg">
+				<a href="#" class="portfolio-info">
+					<div class="pfbg set-bg" data-setbg="img/portfolio/5.jpg"></div>
+					<h5>Summer in the desert</h5>
+					<p>Landscape Photography</p>
+				</a>
+			</div>
+			<!-- single item -->
+			<div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/6.jpg">
+				<a href="#" class="portfolio-info">
+					<div class="pfbg set-bg" data-setbg="img/portfolio/6.jpg"></div>
+					<h5>Summer in the desert</h5>
+					<p>Landscape Photography</p>
+				</a>
+			</div>
+			<!-- single item -->
+			<div class="mix single-portfolio sm-wide set-bg land" data-setbg="img/portfolio/7.jpg">
+				<a href="#" class="portfolio-info">
+					<div class="pfbg set-bg" data-setbg="img/portfolio/7.jpg"></div>
+					<h5>Summer in the desert</h5>
+					<p>Landscape Photography</p>
+				</a>
+			</div>
+			<!-- single item -->
+			<div class="mix single-portfolio set-bg port" data-setbg="img/portfolio/8.jpg">
+				<a href="#" class="portfolio-info">
+					<div class="pfbg set-bg" data-setbg="img/portfolio/8.jpg"></div>
+					<h5>Summer in the desert</h5>
+					<p>Landscape Photography</p>
+				</a>
+			</div>
+			<!-- single item -->
+			<div class="mix single-portfolio set-bg photo" data-setbg="img/portfolio/9.jpg">
+				<a href="#" class="portfolio-info">
+					<div class="pfbg set-bg" data-setbg="img/portfolio/9.jpg"></div>
+					<h5>Summer in the desert</h5>
+					<p>Landscape Photography</p>
+				</a>
+			</div>
+			<!-- single item -->
+			<div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/10.jpg">
+				<a href="#" class="portfolio-info">
+					<div class="pfbg set-bg" data-setbg="img/portfolio/10.jpg"></div>
+					<h5>Summer in the desert</h5>
+					<p>Landscape Photography</p>
+				</a>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="sp-pad next-portfolio-link">
+			<a href="#" class="arrow-btn">
+				<i class="fa fa-angle-right"></i>
+				<i class="fa fa-angle-right"></i>
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+	</section>
+	<!-- Portfolio section end -->
 
 
+	<!-- Footer section start -->
+	<footer class="footer-section spad">
+		<div class="container text-center">
+			<h2>Feel Free To Reach Us!</h2>
+			<p>kbtickets@gmail.com</p>
+			<div class="social">
+				<a ><i class="fa fa-pinterest"></i></a>
+				<a ><i class="fa fa-facebook"></i></a>
+				<a ><i class="fa fa-twitter"></i></a>
+				<a ><i class="fa fa-dribbble"></i></a></br>
 
-          <br>
-          </TABLE>
-          </form>
+
+</br>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>KB Tickets</a>
+
+			</div>
+		</div>
+	</footer>
+	<!-- Footer section end -->
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/mixitup.min.js"></script>
+	<script src="js/circle-progress.min.js"></script>
+	<script src="js/main1.js"></script>
 </body>
 </html>

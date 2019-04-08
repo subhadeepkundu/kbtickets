@@ -3,7 +3,7 @@ session_start();
 unset($_SESSION['email']);
 session_destroy();
 session_write_close();
-header('Location: cust_login.php');
+header('Location: index.php');
 die();
 ?>
 

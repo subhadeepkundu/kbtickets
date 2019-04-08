@@ -1,3 +1,6 @@
+<?php include('db_connect.php');
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,63 +48,46 @@
 		</div>
 		<nav class="main-menu">
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">about us</a></li>
-				<li><a href="cust_sign.php">Sign Up</a></li>
-				<li><a href="cust_login.php">Sign In</a></li>
-<!-- 				<li><a href="blog.html">Blog</a></li> -->
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="about.php">about us</a></li>
+				<!-- <li><a href="#">Services</a></li>
+				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="blog.html">Blog</a></li> -->
+				<?php 
+				if (!isset($_SESSION["email"])) {?><li><a href="cust_sign.php">Sign Up</a></li><?php }
+                    else{ 
+$email= $_SESSION["email"]; $results = mysqli_query($conn, "SELECT * FROM customer where email='$email'"); 
+                          $rowf = mysqli_fetch_array($results);?><li><a href="cust_dash.php"><b>hi,&nbsp;<?php echo $rowf['name'];?></b></a></li><?php } ?>
+				
+				<!-- <li><a href="cust_login.php">Sign In</a></li> -->
+				<?php 
+				if (!isset($_SESSION["email"])) {?><li><a href="cust_login.php">Sign In</a></li><?php }
+                    else{ ?><li><a href="logout_cust.php"><b>logout</b></a></li><?php } ?>
+                <?php 
+				if (isset($_SESSION["email"])) {?><li><a href="cust_dash.php"><b>MY dashboard</b></a></li><?php }?>
+				<li><a href="contact.php">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
 	<!-- Header section end -->
 
-
-	<!-- Hero section start -->
-	<section class="hero-section">
-		<div class="hero-slider owl-carousel">
-			<div class="hs-item set-bg sp-pad" data-setbg="img/hero-slider/1.jpg">
-				<div class="hs-text">
-					<h2 class="hs-title">KB Tickets</h2>
-					<p class="hs-des">We Create Your Bus Ride <br>Hassle-Free and Smoother</p>
-				</div>
-			</div>
-			<div class="hs-item set-bg sp-pad" data-setbg="img/hero-slider/2.jpg">
-				<div class="hs-text">
-					<h2 class="hs-title">KB Tickets</h2>
-					<p class="hs-des">We Create Your Bus Ride <br>Hassle-Free and Smoother</p>
-				</div>
-			</div>
+	<!-- Page top section start -->
+	<div class="page-top-area set-bg" data-setbg="img/headers-bg/4.jpg">
+		<div class="breadcrumb-area">
+			<a href="index.php">Home</a> / <span>Contact</span>
 		</div>
-	</section>
-	<!-- Hero section end -->
+	</div>
+	<!-- Page top section end -->
 
+	<div class="map-area" id="map-canvas"></div>
 
-	<!-- Intro section start -->
-	<section class="intro-section sp-pad spad">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-4 intro-text">
-					<span class="sp-sub-title">KB Tickets</span>
-					<h3 class="sp-title">We are so Creative</h3>
-					<p>Our previous work helped people by providing travel solutions. Our aim is to make travel for commuters as simplified as possible.</p>
-				</div>
-				<div class="col-xl-7 offset-xl-1">
-					<figure class="intro-img mt-5 mt-xl-0">
-						<img src="img/intro.jpg" alt="">
-					</figure>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Intro section end -->
 
 	<!-- Contact section start -->
 	<section class="contact-section set-bg spad" data-setbg="img/contact-bg.jpg">
 		<div class="container-fluid contact-warp">
 			<div class="contact-text">
 				<div class="container p-0">
-					<span class="sp-sub-title">KB Tickets - Online Ticketing Solution</span>
+					<span class="sp-sub-title">Amazing studio</span>
 					<h3 class="sp-title">Stay in touch</h3>
 					<p>Get in touch with us if you have any queries regarding ticketing or if you have faced any issues.</p>
 
@@ -138,7 +124,7 @@
 	<!-- Contact section end -->
 
 
-		<!-- Footer section start -->
+	<!-- Footer section start -->
 	<footer class="footer-section spad">
 		<div class="container text-center">
 			<h2>Feel Free To Reach Us!</h2>
@@ -156,7 +142,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			</div>
 		</div>
 	</footer>
-	<!-- Footer section end -->
+	<!-- Footer section end -->	
 
 
 	<!--====== Javascripts & Jquery ======-->
@@ -166,5 +152,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/mixitup.min.js"></script>
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/main1.js"></script>
+
+	<!-- load for map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXtR5Dj7h6SzTuEUwBhee8wQFim8Ousw4"></script>
+	<script src="js/map.js"></script>
+
 </body>
 </html>

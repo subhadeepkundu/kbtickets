@@ -1,4 +1,9 @@
 <?php include('db_connect.php');
+session_start();
+if (isset($_SESSION["email"])) {
+    header("location: cust_dash.php");
+    exit; 
+}
   $nameErr = $emailErr = $phnoErr  =$passwordErr = $confpasswordErr  = "";
   if(isset($_POST['submit'])){
 
@@ -97,7 +102,7 @@
 	
 	<div class="limiter">
 		<div style="font-size: 50px; color: #ffffff; float: left"><h3 class="site-logo">KB Tickets</h3></div>
-		<a href="index.html"><div style="font-size: 50px; float: right">
+		<a href="index.php"><div style="font-size: 50px; float: right">
 					<i class="fa fa-home"></i>
 				</div></a>	
 		<div class="container-login100">

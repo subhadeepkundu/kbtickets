@@ -48,7 +48,7 @@ session_start();
 		</div>
 		<nav class="main-menu">
 			<ul>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<li><a href="about.php">about us</a></li>
 				<?php 
 				if (!isset($_SESSION["email"])) {?><li><a href="cust_sign.php">Sign Up</a></li><?php }

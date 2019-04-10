@@ -5,8 +5,7 @@ if (!isset($_SESSION["email"])) {
     header("location: cust_login.php");
     exit; 
 }
-else {$email= $_SESSION["email"];
-$cust_id=$_SESSION["cust_id"];}
+else $email= $_SESSION["email"];
 ?>
 
 <!DOCTYPE html>
@@ -350,29 +349,15 @@ $delimiter=',';
     <h3> For your selected start point <b> <?php echo $start?></b> and end point <b> <?php echo $stop?></b> route is <b> <?php echo $routeSelected?></b> </h3><br>
     	<h3>Your Total Payable amount is INR <b> <?php echo $tot."/-"?></b></h3><br>
     	<form action="" method="post" name="pay">
-    		<input type="hidden" id="start" name="start" value="<?php echo $start ?>">
-    		 <input type="hidden" id="stop" name="stop" value="<?php echo $stop ?>">
-    		 <input type="hidden" id="routeSelected" name="routeSelected" value="<?php echo $routeSelected ?>">
-    		 <input type="hidden" id="fare" name="fare" value="<?php echo $fare ?>">
-    		 <input type="hidden" id="qty" name="qty" value="<?php echo $qty ?>">
-    		 <input type="hidden" id="tot" name="tot" value="<?php echo $tot ?>">
-
     	<input type="submit" class="login100-form-btn" name="submit1" value="PAY NOW" style="background-color: #170a66"/><br><br>
     	</form>
+
 <?php }?>
 
 <?php
  if(isset($_POST['submit1'])){
- 	$start= $_POST['start'];
- 	$stop= $_POST['stop'];
- 	$routeSelected= $_POST['routeSelected'];
- 	$fare= $_POST['fare'];
- 	$qty= $_POST['qty'];
- 	$tot= $_POST['tot'];
- 	/*$name= $_POST['name'];
- 	$name= $_POST['name'];*/
 
-$query="INSERT INTO transactions (cust_id,start,stop,route,fare,qty,amt) VALUES ('$cust_id','$start','$stop','$routeSelected','$fare','$qty','$tot') ";
+$query="INSERT INTO transactions (fare) VALUES ('1') ";
 
       $res=mysqli_query($conn,$query);
   }

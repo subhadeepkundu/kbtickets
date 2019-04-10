@@ -1,0 +1,14 @@
+X,Jadavpur,Jadavpur P.S.,South City/Lake Gardens,Prince Anwar Shah Road,Rashbehari Avenue,Hazra Park,Elgin Road,Rabindra Sadan/Exide,Park Street,Esplanade,B.B.D. Bag,Howrah Bridge East,Howrah Station
+Jadavpur,X,20,30,30,30,30,30,30,30,30,40,40,40
+Jadavpur P.S.,20,X,20,20,30,30,30,30,30,30,30,40,40
+South City/Lake Gardens,30,20,X,20,20,30,30,30,30,30,30,30,40
+Prince Anwar Shah Road,30,20,20,X,20,20,30,30,30,30,30,30,40
+Rashbehari Avenue,30,30,20,20,X,20,30,30,30,30,30,30,30
+Hazra Park,30,30,30,20,20,X,20,30,30,30,30,30,30
+Elgin Road,30,30,30,30,30,20,X,20,20,30,30,30,30
+Rabindra Sadan/Exide,30,30,30,30,30,30,20,X,20,20,30,30,30
+Park Street,30,30,30,30,30,30,20,20,X,20,20,30,30
+Esplanade,30,30,30,30,30,30,30,20,20,X,20,30,30
+B.B.D. Bag,40,30,30,30,30,30,30,30,20,20,X,20,30
+Howrah Bridge East,40,40,30,30,30,30,30,30,30,30,20,X,20
+Howrah Station,40,40,40,40,30,30,30,30,30,30,30,20,X

@@ -1,0 +1,19 @@
+X,Jadavpur,Sukanta Setu,Santoshpur,Survey Park/Kalikapur,Kasba Depot/Ruby Hospital,Panchanna Gram/VIP Nagar Bazar,Science City/Park Circus Connector,Metropolitan Co-Op Housing Estates,Chingrihata,Sukanta Nagar,Nicco Park,Swastha Bhavan,College Mor,Technopolis,New Town Bus Stand,HIDCO Bhavan/Narkel Bagan,Tata Medical Centre,Ecospace
+Jadavpur,X,20,20,20,25,25,25,35,35,35,35,35,35,35,35,40,40,40
+Sukanta Setu,20,X,20,20,20,25,25,25,35,35,35,35,35,35,35,40,40,40
+Santoshpur,20,20,X,20,20,25,25,25,35,35,35,35,35,35,35,35,40,40
+Survey Park/Kalikapur,20,20,20,X,20,20,25,25,25,35,35,35,35,35,35,35,35,40
+Kasba Depot/Ruby Hospital,25,20,20,20,X,20,20,20,25,25,25,25,35,35,35,35,35,35
+Panchanna Gram/VIP Nagar Bazar,25,25,25,20,20,X,20,20,20,25,25,25,25,25,35,35,35,35
+Science City/Park Circus Connector,25,25,25,25,20,20,X,20,20,20,20,20,25,25,25,35,35,35
+Metropolitan Co-Op Housing Estates,35,25,25,25,20,20,20,X,20,20,20,20,25,25,25,35,35,35
+Chingrihata,35,35,35,25,25,20,20,20,X,20,20,20,20,20,25,25,25,35
+Sukanta Nagar,35,35,35,35,25,25,20,20,20,X,20,20,20,20,25,25,25,35
+Nicco Park,35,35,35,35,25,25,20,20,20,20,X,20,20,20,20,25,25,25
+Swastha Bhavan,35,35,35,35,25,25,20,20,20,20,20,X,20,20,20,25,25,25
+College Mor,35,35,35,35,35,25,25,25,20,20,20,20,X,20,20,20,25,25
+Technopolis,35,35,35,35,35,25,25,25,20,20,20,20,20,X,20,20,20,25
+New Town Bus Stand,35,35,35,35,35,35,25,25,25,25,20,20,20,20,X,20,20,20
+HIDCO Bhavan/Narkel Bagan,40,40,35,35,35,35,35,35,25,25,25,25,20,20,20,X,20,20
+Tata Medical Centre,40,40,40,35,35,35,35,35,25,25,25,25,25,20,20,20,X,20
+Ecospace,40,40,40,40,35,35,35,35,35,35,25,25,25,25,20,20,20,X

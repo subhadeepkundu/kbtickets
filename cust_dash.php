@@ -20,6 +20,28 @@ else $email= $_SESSION["email"];
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -87,92 +109,92 @@ $email= $_SESSION["email"]; $results = mysqli_query($conn, "SELECT * FROM custom
 
 
 	<!-- Portfolio section start -->
-	<section class="portfolio-section">
-		<div class="sp-pad spad">
+	<!-- <section class="portfolio-section">
+		<div class="sp-pad spad"> -->
 			<!-- portfolio filter menu -->
-			<ul class="portfolio-filter controls">
+			<!-- ul class="portfolio-filter controls">
 				<li class="control" data-filter="*">All</li>
 				<li class="control" data-filter=".photo">Photography</li>
 				<li class="control" data-filter=".wedding">Weddings</li>
 				<li class="control" data-filter=".land">Landscapes</li>
 				<li class="control" data-filter=".port">Portraits</li>
 			</ul>
-		</div>
-		<div class="portfolio-warp">
+		</div> -->
+		<!-- <div class="portfolio-warp"> -->
 			<!-- single item -->
-			<div class="mix single-portfolio set-bg photo" data-setbg="img/portfolio/1.jpg">
+			<!-- <div class="mix single-portfolio set-bg photo" data-setbg="img/portfolio/1.jpg">
 				<a href="#" class="portfolio-info">
 					<div class="pfbg set-bg" data-setbg="img/portfolio/1.jpg"></div>
 					<h5>Summer in the desert</h5>
 					<p>Landscape Photography</p>
 				</a>
-			</div>
+			</div> -->
 			<!-- single item -->
-			<div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/2.jpg">
+			<!-- <div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/2.jpg">
 				<a href="#" class="portfolio-info">
 					<div class="pfbg set-bg" data-setbg="img/portfolio/2.jpg"></div>
 					<h5>Summer in the desert</h5>
 					<p>Landscape Photography</p>
 				</a>
-			</div>
+			</div> -->
 			<!-- single item -->
-			<div class="mix single-portfolio set-bg land" data-setbg="img/portfolio/3.jpg">
+			<!-- <div class="mix single-portfolio set-bg land" data-setbg="img/portfolio/3.jpg">
 				<a href="#" class="portfolio-info">
 					<div class="pfbg set-bg" data-setbg="img/portfolio/3.jpg"></div>
 					<h5>Summer in the desert</h5>
 					<p>Landscape Photography</p>
 				</a>
-			</div>
+			</div> -->
 			<!-- single item -->
-			<div class="mix single-portfolio sm-wide set-bg port" data-setbg="img/portfolio/4.jpg">
+			<!-- <div class="mix single-portfolio sm-wide set-bg port" data-setbg="img/portfolio/4.jpg">
 				<a href="#" class="portfolio-info">
 					<div class="pfbg set-bg" data-setbg="img/portfolio/4.jpg"></div>
 					<h5>Summer in the desert</h5>
 					<p>Landscape Photography</p>
 				</a>
-			</div>
+			</div> -->
 			<!-- single item -->
-			<div class="mix single-portfolio sm-wide set-bg photo" data-setbg="img/portfolio/5.jpg">
+			<!-- <div class="mix single-portfolio sm-wide set-bg photo" data-setbg="img/portfolio/5.jpg">
 				<a href="#" class="portfolio-info">
 					<div class="pfbg set-bg" data-setbg="img/portfolio/5.jpg"></div>
 					<h5>Summer in the desert</h5>
 					<p>Landscape Photography</p>
 				</a>
-			</div>
+			</div> -->
 			<!-- single item -->
-			<div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/6.jpg">
+			<!-- <div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/6.jpg">
 				<a href="#" class="portfolio-info">
 					<div class="pfbg set-bg" data-setbg="img/portfolio/6.jpg"></div>
 					<h5>Summer in the desert</h5>
 					<p>Landscape Photography</p>
 				</a>
-			</div>
+			</div> -->
 			<!-- single item -->
-			<div class="mix single-portfolio sm-wide set-bg land" data-setbg="img/portfolio/7.jpg">
+			<!-- <div class="mix single-portfolio sm-wide set-bg land" data-setbg="img/portfolio/7.jpg">
 				<a href="#" class="portfolio-info">
 					<div class="pfbg set-bg" data-setbg="img/portfolio/7.jpg"></div>
 					<h5>Summer in the desert</h5>
 					<p>Landscape Photography</p>
 				</a>
-			</div>
+			</div> -->
 			<!-- single item -->
-			<div class="mix single-portfolio set-bg port" data-setbg="img/portfolio/8.jpg">
+			<!-- <div class="mix single-portfolio set-bg port" data-setbg="img/portfolio/8.jpg">
 				<a href="#" class="portfolio-info">
 					<div class="pfbg set-bg" data-setbg="img/portfolio/8.jpg"></div>
 					<h5>Summer in the desert</h5>
 					<p>Landscape Photography</p>
 				</a>
-			</div>
+			</div> -->
 			<!-- single item -->
-			<div class="mix single-portfolio set-bg photo" data-setbg="img/portfolio/9.jpg">
+			<!-- <div class="mix single-portfolio set-bg photo" data-setbg="img/portfolio/9.jpg">
 				<a href="#" class="portfolio-info">
 					<div class="pfbg set-bg" data-setbg="img/portfolio/9.jpg"></div>
 					<h5>Summer in the desert</h5>
 					<p>Landscape Photography</p>
 				</a>
-			</div>
+			</div> -->
 			<!-- single item -->
-			<div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/10.jpg">
+			<!-- <div class="mix single-portfolio set-bg wedding" data-setbg="img/portfolio/10.jpg">
 				<a href="#" class="portfolio-info">
 					<div class="pfbg set-bg" data-setbg="img/portfolio/10.jpg"></div>
 					<h5>Summer in the desert</h5>
@@ -188,8 +210,62 @@ $email= $_SESSION["email"]; $results = mysqli_query($conn, "SELECT * FROM custom
 				<i class="fa fa-angle-right"></i>
 			</a>
 		</div>
-	</section>
+	</section> -->
 	<!-- Portfolio section end -->
+	<form action="" method="post" name="route">
+	<span class="login100-form-title p-b-59">Select Your Route</span>
+	<center><select class="mdb-select md-form" searchable="Search here..">
+  <option value="" disabled selected>Choose your route</option>
+  <option value="1">Route 1</option>
+  <option value="2">Route 2</option>
+  <option value="3">Route 3</option>
+</select>&nbsp;&nbsp;<b><input type="submit" class="mdb-select md-form" name="submit" value="Select" / ></b></center><br><br>
+	</form>
+	<form action="" method="post" name="book">
+			<span class="login100-form-title p-b-59">Book Your Tickets</span>
+		<select class="mdb-select md-form" searchable="Search here..">
+		  	<option value="" disabled selected>Enter start stop</option>
+		  	<option value="1">Route 1</option>
+		  	<option value="2">Route 2</option>
+		  	<option value="3">Route 3</option>
+		</select>
+		<select class="mdb-select md-form" searchable="Search here..">
+		  	<option value="" disabled selected>Enter end stop</option>
+		  	<option value="1">Route 1</option>
+		  	<option value="2">Route 2</option>
+		  	<option value="3">Route 3</option>
+		</select>
+		<select class="mdb-select md-form" searchable="Search here..">
+		  	<option value="" disabled selected>Enter Fare per ticket</option>
+		  	<!-- <option value="1">Route 1</option>
+		  	<option value="2">Route 2</option>
+		  	<option value="3">Route 3</option> -->
+		  	<?php 
+			for($i=1; $i<=50; $i++)
+			{
+			    echo "<option value=".$i.">".$i."</option>";
+			}
+			?> 
+			 <option name="fare"> </option>
+		</select>
+		<select class="mdb-select md-form" searchable="Search here..">
+		  	<option value="" disabled selected>Enter Quantity</option>
+		  	<!-- <option value="1">Route 1</option>
+		  	<option value="2">Route 2</option>
+		  	<option value="3">Route 3</option> -->
+		  	<?php 
+			for($i=1; $i<=10; $i++)
+			{
+			    echo "<option value=".$i.">".$i."</option>";
+			}
+			?> 
+			 <option name="qty"> </option> 
+		</select>
+		&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="mdb-select md-form" name="submit" value="Book Now" /><br><br>
+	</form>
+
+
+	<span class="login100-form-title p-b-59">Book Your Tickets</span>
 
 
 	<!-- Footer section start -->

@@ -88,7 +88,7 @@ $email= $_SESSION["email"]; $results = mysqli_query($conn, "SELECT * FROM custom
 			<div class="row">
 				<div class="col-xl-4 intro-text">
 					<span class="sp-sub-title">KB Tickets</span>
-					<h3 class="sp-title">We are so Creative</h3>
+					<h3 class="sp-title">What do we do?</h3>
 					<p>Our previous work helped people by providing travel solutions. Our aim is to make travel for commuters as simplified as possible.</p>
 				</div>
 				<div class="col-xl-7 offset-xl-1">

@@ -10,7 +10,7 @@ session_start();
 	<meta name="keywords" content="photography, portfolio, onepage, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link href="img/favicon.jpg" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
@@ -87,7 +87,7 @@ $email= $_SESSION["email"]; $results = mysqli_query($conn, "SELECT * FROM custom
 		<div class="container-fluid contact-warp">
 			<div class="contact-text">
 				<div class="container p-0">
-					<span class="sp-sub-title">Amazing studio</span>
+					<span class="sp-sub-title">KB Tickets-- ONLINE TICKETING SOLUTION</span>
 					<h3 class="sp-title">Stay in touch</h3>
 					<p>Get in touch with us if you have any queries regarding ticketing or if you have faced any issues.</p>
 

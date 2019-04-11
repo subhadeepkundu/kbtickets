@@ -24,11 +24,6 @@ session_start();
 	<link rel="stylesheet" href="css/style.css"/>
 
 
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
 </head>
 <body>
 	<!-- Page Preloder -->
@@ -39,10 +34,7 @@ session_start();
 	<!-- Header section start -->
 	<header class="header-section sp-pad">
 		<h3 class="site-logo">KB Tickets</h3>
-		<!-- <form class="search-top">
-			<button class="se-btn"><i class="fa fa-search"></i></button>
-			<input type="text" placeholder="Search.....">
-		</form> -->
+
 		<div class="nav-switch">
 			<i class="fa fa-bars"></i>
 		</div>

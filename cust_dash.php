@@ -53,12 +53,6 @@ $cust_id=$_SESSION["cust_id"];}
 	<link rel="stylesheet" href="css/owl.carousel.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 
-
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
 </head>
 <body>
 	<!-- Page Preloder -->
@@ -69,10 +63,6 @@ $cust_id=$_SESSION["cust_id"];}
 	<!-- Header section start -->
 	<header class="header-section sp-pad">
 		<h3 class="site-logo">KB Tickets</h3>
-		<!-- <form class="search-top">
-			<button class="se-btn"><i class="fa fa-search"></i></button>
-			<input type="text" placeholder="Search.....">
-		</form> -->
 		<div class="nav-switch">
 			<i class="fa fa-bars"></i>
 		</div>
@@ -80,9 +70,6 @@ $cust_id=$_SESSION["cust_id"];}
 			<ul>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="about.php">about us</a></li>
-				<!-- <li><a href="#">Services</a></li>
-				<li><a href="portfolio.html">Portfolio</a></li>
-				<li><a href="blog.html">Blog</a></li> -->
 				<?php 
 				if (!isset($_SESSION["email"])) {?><li><a href="cust_sign.php">Sign Up</a></li><?php }
                     else{ 
@@ -154,17 +141,8 @@ $all=array("Jadavpur","Jadavpur P.S.","South City/Lake Gardens","Prince Anwar Sh
 			?> 
 			 <option name="qty"> </option> 
 		</select>
-		&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="login100-form-btn" name="submit" value="See Details" style="background-color: #ea7773"/><br><br>
+		&nbsp;&nbsp;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="login100-form-btn" name="submit" value="See Details" style="background-color: #8c390f"/><br><br>
 	</form>
-
-
-<!-- <?php
-if(isset($_POST['submit'])){
-
-echo $_POST["start"]."<br>";
-echo $_POST["stop"]; 
-echo $_POST["qty"];
-}?> -->
 
 <?php
 if(isset($_POST['submit'])){
@@ -195,6 +173,7 @@ $filename="";
  // echo $routeSelected;
 if(strcmp($routeSelected,"N/A")==0){
 	/*echo "No Routes Found ";*/
+	$fare=0;
 	$tot=0;
 }
 else{
@@ -235,8 +214,8 @@ $delimiter=',';
 //}
     }?>
 
-    <h3> For your selected start point <b> <?php echo $start?></b> and end point <b> <?php echo $stop?></b> route is <b> <?php echo $routeSelected?></b> </h3><br>
-    	<h3>Your Total Payable amount is INR <b> <?php echo $tot."/-"?></b></h3><br>
+    <h3> For your selected start point <b> <?php echo $start?></b> and end point <b> <?php echo $stop?></b> route is <b> <?php echo $routeSelected?></b> </h3><br>s
+    	<h3>Your Total Payable amount is <b> <?php echo $qty."*".$fare."= INR ".$tot."/-"?></b></h3><br>
     	<form action="" method="post" name="pay">
     		<input type="hidden" id="start" name="start" value="<?php echo $start ?>">
     		 <input type="hidden" id="stop" name="stop" value="<?php echo $stop ?>">
@@ -259,8 +238,6 @@ $delimiter=',';
  	$fare= $_POST['fare'];
  	$qty= $_POST['qty'];
  	$tot= $_POST['tot'];
- 	/*$name= $_POST['name'];
- 	$name= $_POST['name'];*/
 
 $query="INSERT INTO transactions (cust_id,start,stop,route,fare,qty,amt) VALUES ('$cust_id','$start','$stop','$routeSelected','$fare','$qty','$tot') ";
 
@@ -273,6 +250,44 @@ $query="INSERT INTO transactions (cust_id,start,stop,route,fare,qty,amt) VALUES 
 
 
 	<span class="login100-form-title p-b-59">Your Past Transactions</span>
+
+
+	<?php $results = mysqli_query($conn, "SELECT * FROM transactions where cust_id='$cust_id' ORDER BY timestamp DESC"); ?>
+
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Start Loaction</th>
+      <th scope="col">Drop Loaction</th>
+      <th scope="col">Route</th>
+      <th scope="col">Fare</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Paid Amount</th>
+      <th scope="col">Date & Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<?php 
+	  $count=1;
+	  while ($rowf = mysqli_fetch_array($results)) { ?>
+    <tr>
+      <th scope="row"><?php echo $count++; ?></th>
+      <td><?php echo $rowf['start']; ?></td>
+      <td><?php echo $rowf['stop']; ?></td>
+      <td><?php echo $rowf['route']; ?></td>
+      <td>INR&nbsp;<?php echo $rowf['fare']; ?>/-</td>
+      <td><?php echo $rowf['qty']; ?></td>
+      <td>INR&nbsp;<?php echo $rowf['amt']; ?>/-</td>
+      <td><?php echo $rowf['timestamp']; ?></td>
+    </tr>
+    <?php  }?>
+   </tbody>
+</table>
+<br>
+<br>
 
 
 	<!-- Footer section start -->
